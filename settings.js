@@ -21,4 +21,9 @@ function calAclSize() {
 	aclHeight = b;
 }
 
+function onResize() {
+	canvas.width = aclWidth;
+	canvas.height = aclHeight;
+}
+
 calAclSize();

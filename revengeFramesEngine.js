@@ -23,7 +23,3 @@ stage = new Stage();
 		};
 }());
 
-function onResize() {
-	canvas.width = aclWidth;
-	canvas.height = aclHeight;
-}
