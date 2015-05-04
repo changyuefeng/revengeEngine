@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>Test</title>
+		<meta content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=1, user-scalable=0" name="viewport" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<meta name="apple-mobile-web-app-title" content="MARYKAY">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="http://style.cdn.juhaomai.net/style/js/global/lib/jquery/jquery-1.9.1.min.js"></script>
+		<style>
+			html,
+			body {
+				margin: 0px auto;
+				padding: 0px auto;
+				background-color: darkblue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--<img src="bg2.png" style="position:absolute;width:500px;margin:0 auto;z-index: 100; " />-->
+		<canvas id="canvas"></canvas>
+		<script src="settings.js "></script>
+		<script src="stage.js "></script>
+		<script src="revengeFramesEngine.js "></script>
+		<script src="texture.js "></script>
+		<script type="text/javascript ">
+			$(document).ready(function() {
+				onResize();
+				//注意js引用顺序，注意canvas id, stage对象为全局公用
+				function draw() {
+					//add your code here if you want;
+					revengeFrames(draw);
+				}
+				var dun = new Texture("dun.png");
+				//参数 为 起始x位置,起始y位置,重点x位置,重点y位置,执行时间单位毫秒
+				dun.setLineAnimation(50, 0, 50, 500, 1000);
+				var shitou = new Texture("shitou.png");
+				shitou.setLineAnimation(150, 500, 150, 0, 1000);
+				var zidan = new Texture("zidan.png");
+				zidan.setLineAnimation(250, 500, 250, 0, 1000);
+				stage.addChild(dun);
+				stage.addChild(shitou);
+				stage.addChild(zidan);
+				draw();
+				//终结动画方法
+				//cancelRevengeFrames();
+				//终结素材方法
+				//shitou.destoryTexture();
+				//				setTimeout(function() {
+				//					cancelRevengeFrames();
+				//				}, 1000);
+				//				setTimeout(function() {
+				//					revengeFrames(draw);
+				//				}, 3000);
+			});
+		</script>
+
+	</body>
+
+</html>
