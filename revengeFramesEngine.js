@@ -1,7 +1,6 @@
 // 2015 revenge Engine
 // auth cyf
 // blog http://blog.scalap.com
-// global engine setting
 
 
 
